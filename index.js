@@ -103,10 +103,10 @@ class YouTubePlayer extends EventEmitter {
 
   load (videoId, autoplay = false, startTime = 0) {
     if (this.destroyed) return
-    
+
     this.videoId = videoId
     this._autoplay = autoplay
-    this._startTime = startTime;
+    this._startTime = startTime
     // If the Iframe API is not ready yet, do nothing. Once the Iframe API is
     // ready, `load(this.videoId)` will be called.
     if (!this._api) return
@@ -427,7 +427,7 @@ class YouTubePlayer extends EventEmitter {
     //      was ready. Therefore, the player was initialized with the wrong videoId,
     //      so load the latest videoId and potentially autoplay it.
     this.load(this.videoId, this._autoplay, this._startTime)
-    this.emit('ready');
+    this.emit('ready')
 
     this._flushQueue()
   }
