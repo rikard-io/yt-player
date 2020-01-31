@@ -427,6 +427,7 @@ class YouTubePlayer extends EventEmitter {
     //      was ready. Therefore, the player was initialized with the wrong videoId,
     //      so load the latest videoId and potentially autoplay it.
     this.load(this.videoId, this._autoplay, this._startTime)
+    this.emit('ready');
 
     this._flushQueue()
   }
